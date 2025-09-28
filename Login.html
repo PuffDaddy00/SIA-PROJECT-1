@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITES Login Form</title>
+    <!-- Link to the Inter font for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+
+    <!-- Transparent Outer Box (Class: outer-box) -->
+    <div class="outer-box">
+        
+        <!-- Login Card Container (Inner White Box - Class: login-card) -->
+        <div class="login-card">
+
+            <!-- Header Area (Class: header) -->
+            <div class="header">
+                <!-- Logo and SITES Title (Class: logo-container) -->
+                <div class="logo-container">
+                    <!-- Logo Image -->
+                    <img 
+                        src="SITES LOGO.png" 
+                        onerror="this.onerror=null; this.src=''"
+                        alt="SITES Organization Logo" 
+                        class="logo-image"
+                    />
+                </div>
+            </div>
+
+            <!-- Wrapper to center the functional form content -->
+            <div class="form-content-wrapper">
+                <!-- Login Form (Class: form-container) -->
+                <form id="loginForm" class="form-container" action="#" method="POST">
+
+                    <!-- Username Input Group (Class: form-group) -->
+                    <div class="form-group">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" id="username" name="username" class="input-line" required>
+                    </div>
+
+                    <!-- Password Input Group (Class: form-group) -->
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" name="password" class="input-line" required>
+                    </div>
+                    
+                    <!-- Login Button (Class: login-button) -->
+                    <button type="submit" class="login-button">
+                        LOGIN
+                    </button>
+                </form>
+            </div>
+            <!-- END form-content-wrapper -->
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+    

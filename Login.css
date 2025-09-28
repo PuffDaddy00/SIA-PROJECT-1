@@ -1,0 +1,162 @@
+:root {
+    --primary-violet: #8D39A3; /* Button color */
+    --background-start: #5A2C85;
+    --background-end: #D5459B;
+    --label-color: #4B5563; /* Medium dark grey for labels (professional look) */
+    --input-text-color: #1F2937; /* Very dark grey for high contrast in input fields */
+    --deep-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* Base Body and Layout Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    padding: 1rem; 
+    background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%); 
+    
+    /* Disable text selection for the entire body */
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+/* Outer Transparent Box Styles */
+.outer-box {
+    padding: 2rem; 
+    border-radius: 2rem; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 10px 20px -5px var(--deep-shadow); 
+    backdrop-filter: blur(10px); 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    max-width: 95vw;
+}
+
+/* Login Card Container Styles */
+.login-card {
+    width: 100%; 
+    max-width: 450px; 
+    min-height: auto; 
+    background-color: white; 
+    border-radius: 1.5rem; 
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.15), 0 4px 8px -4px rgba(0, 0, 0, 0.08); 
+    padding: 2.5rem; 
+    overflow: hidden; 
+}
+
+.form-content-wrapper {
+    max-width: 350px; 
+    margin: 0 auto; 
+}
+
+/* Logo and Title Area Styles - FIX: Centering logic is robust */
+.header {
+    text-align: center; 
+    margin-bottom: 2.5rem; 
+}
+.logo-container {
+    /* This flexbox setup ensures the logo image is perfectly centered */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 0 auto;
+}
+
+.logo-image {
+    max-width: 100%; 
+    height: auto;
+    width: 300px; 
+    pointer-events: none; /* Prevent image dragging */
+}
+
+/* IMPROVED MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .logo-image {
+        width: 200px; /* Slightly smaller for mobile */
+    }
+    .login-card {
+        max-width: 90vw; /* Take up 90% of viewport width */
+        padding: 2rem 1.25rem; 
+    }
+    .form-content-wrapper {
+        max-width: 100%; /* Use full available space in the card */
+    }
+    .login-button {
+        padding: 0.85rem 0;
+        font-size: 1rem;
+    }
+}
+
+/* Form and Input Styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem; 
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    touch-action: manipulation;
+    gap: 0.4rem; 
+}
+
+.form-label {
+    font-size: 0.8rem; 
+    font-weight: 500; 
+    color: var(--label-color); 
+    text-transform: capitalize; 
+    letter-spacing: normal;
+    padding-left: 0.1rem; 
+}
+
+/* Input Line Styling */
+.input-line {
+    border: none;
+    border-bottom: 1px solid; 
+    transition: border-color 0.3s;
+    outline: none;
+    padding: 0.25rem 0.5rem 3px 0.5rem; 
+    border-bottom-color: #D1D5DB; 
+    color: var(--input-text-color); 
+    width: 100%; 
+    text-align: left; 
+    font-size: 0.95rem; 
+    /* Ensures input fields are editable and selectable */
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+.input-line:focus {
+    border-bottom-color: var(--primary-violet); 
+}
+
+/* Button Styles */
+.login-button {
+    width: 100%;
+    background-color: var(--primary-violet);
+    color: white;
+    font-size: 0.95rem; 
+    font-weight: 600; 
+    padding: 0.75rem 0; 
+    border-radius: 0.375rem; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); 
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    touch-action: manipulation;
+}
+.login-button:hover {
+    background-color: #79328a; 
+    transform: scale(1.005); 
+}
+.login-button:active {
+    transform: scale(0.995); 
+}
