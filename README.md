@@ -1,8 +1,8 @@
-Edited by Matthew:
+Edited by Christian :
 
 SITES User Management Database
 
-Date: September 29, 2025
+Date: October 16 20225
 
 Overview
 
@@ -93,5 +93,5 @@ Confirmation prompts before deleting a user.
 
 Seamless update and delete operations with visual feedback.
 
-
+Fornt end for leaders done
 ------------------------------------------------------------------------
