@@ -91,7 +91,8 @@ Logout button redirects to login.html.
 
 Confirmation prompts before deleting a user.
 
+Fornt end for leaders done
+
 Seamless update and delete operations with visual feedback.
 
-Fornt end for leaders done
 ------------------------------------------------------------------------
