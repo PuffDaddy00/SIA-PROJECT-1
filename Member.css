@@ -1,0 +1,131 @@
+/* Import Inter font for a clean, modern look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    background-color: #f9fafb; 
+}
+
+/* CSS for the Continuous Linear Gradient - Used for the sidebar */
+.main-gradient {
+    background-image: linear-gradient(to bottom, #A319A3, #5A1AAA);
+}
+
+/* Custom style for the active sidebar tab indicator */
+.sidebar-item-active {
+    position: relative;
+    background-color: #E0D0E7; /* Changed from white to sites-light for better visibility */
+    color: #6A1B9A; /* sites-dark */
+    border-top-left-radius: 0.5rem;      
+    border-bottom-left-radius: 0.5rem; 
+    margin-left: 0.75rem; /* 12px */
+}
+
+.sidebar-item-active::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #E0D0E7; /* Match the new background color */
+}
+
+/* Logic for Page Switching */
+.content-page { display: none; }
+.content-page.active { display: block; }
+
+/* Status badge styles for the Assign page */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+.status-done { background-color: #dcfce7; color: #166534; }
+.status-pending { background-color: #fef9c3; color: #854d0e; }
+.status-overdue { background-color: #fee2e2; color: #991b1b; }
+
+/* Styles for the new Calendar Modal */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr); /* Always show 6 rows for consistent height */
+    gap: 1px;
+    background-color: #e5e7eb; /* gray-200 */
+}
+.calendar-day {
+    background-color: white;
+    padding: 8px;
+    position: relative;
+    overflow-y: hidden; /* Ensures content that is too long does not stretch the cell */
+}
+.calendar-day.other-month {
+    background-color: #f9fafb; /* content-bg */
+    color: #d1d5db; /* gray-300 */
+}
+.calendar-day-number {
+    font-weight: 600;
+}
+.calendar-day-number.today {
+     background-color: #BB33A0; /* sites-accent */
+     color: white;
+     border-radius: 50%;
+     width: 28px;
+     height: 28px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.calendar-event {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-left-width: 4px;
+}
+.priority-high { border-color: #ef4444; background-color: #fee2e2; color: #991b1b; } /* Red */
+.priority-medium { border-color: #f59e0b; background-color: #fef9c3; color: #854d0e; } /* Amber */
+.priority-low { border-color: #58b539; background-color: #dbfee4; color: #115424; } /* green */
+
+/* Add/Edit Task Modal Custom Styles */
+#add-task-modal .modal-content, #edit-task-modal .modal-content {
+     height: 550px; /* Fixed height for the modal content area */
+}
+
+.edit-profile-view { display: none; }
+.edit-profile-view.active { display: block; }
+
+/* For new Task page accordion */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; /* Smoother transition */
+}
+.accordion-content.open {
+    max-height: 1000px; /* Should be enough for content */
+}
+.accordion-arrow {
+    transition: transform 0.3s ease-out;
+}
+.accordion-arrow.open {
+    transform: rotate(180deg);
+}
+
+/* Style for disabled elements */
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .sidebar-desktop { display: none; }
+    .profile-grid { grid-template-columns: 1fr; }
+}
