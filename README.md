@@ -97,4 +97,6 @@ Seamless update and delete operations with visual feedback.
 
 Adding features for all features in admin
 
+UI for members dome
+
 ------------------------------------------------------------------------
